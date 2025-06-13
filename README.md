@@ -65,7 +65,7 @@ Anorganik
 - Ada Sampah
 - Tidak Ada Sampah <br>
 
-- Link Kaggle :
+- Link Kaggle : <br>
 https://www.kaggle.com/datasets/arthurwaruwu/datasetcapstonefixx
 https://www.kaggle.com/datasets/sakifaindiraputri/dataset-model-2
 
@@ -81,28 +81,28 @@ https://drive.google.com/file/d/1U07Ld1GOruukNU1F3vjnskVlyTvp9W7h/view?usp=shari
 
 ### Univariate EDA Model Prediksi Komposisi Gambar :
 - Cek missing values <br>
-![missing values](image-4.png) <br>
+![missing values](images/image-4.png) <br>
 Dengan kesimpulan bahwa tidak ada missing values yang terdeteksi. <br>
 - Cek data duplikat <br>
-![Data duplikat](image-5.png) <br>
+![Data duplikat](images/image-5.png) <br>
 Dengan kesimpulan bahwa ada 4 data yang duplikat yang terdeteksi. <br>
 - Melakukan `describe()` di kolom `persentase`<br>
-![describe() di kolom numerik](image.png)<br>
+![describe() di kolom numerik](images/image.png)<br>
 - Melakukan `describe()` di kolom object<br>
-![describe() di kolom object](image-1.png)<br>
+![describe() di kolom object](images/image-1.png)<br>
 - Mendeteksi Outliers<br>
-![Outliers](image-2.png) <br>
+![Outliers](images/image-2.png) <br>
 Secara keseluruhan, boxplot ini menunjukkan distribusi yang cenderung skewed ke kanan, dengan sebagian besar sampah memiliki persentase rendah, namun ada beberapa kategori sampah dengan persentase yang sangat tinggi.<br>
 - Unique values dalam kolom tahun<br>
-![Unique Values](image-3.png)<br>
+![Unique Values](images/image-3.png)<br>
 - Distribusi `persentase`<br>
-![Distribusi Persentase](image-6.png) <br>
+![Distribusi Persentase](images/image-6.png) <br>
 Dengan kesimpulan, sebagian besar data menunjukkan frekuensi yang sangat tinggi di kisaran persentase rendah, terutama pada rentang 0 hingga 10%. Hal ini menunjukkan bahwa sebagian besar sampah yang tercatat memiliki persentase yang sangat kecil. Ini bisa berarti bahwa sebagian besar kategori sampah memiliki kontribusi kecil terhadap total volume sampah yang tercatat. <br>
 - Distribusi `jenis_sampah`<br>
-![jenis sampah](image-7.png) <br>
+![jenis sampah](images/image-7.png) <br>
 Dengan kesimpulan, sampah terbagi cukup merata antara berbagai jenis, dengan kategori seperti Sisa Makanan, Plastik, Logam, Kertas/Karton, dan Kain masing-masing berkontribusi sekitar 11% dari total sampah. Beberapa kategori seperti Karet/Kulit dan Lainnya memiliki kontribusi sedikit lebih rendah (sekitar 10-11%). Sisa Makanan menempati persentase tertinggi, yang mengindikasikan bahwa sampah organik menjadi salah satu kategori utama di banyak daerah, sehingga memerlukan perhatian khusus dalam pengelolaannya.<br>
 - Top 5 Provinsi dengan Sampah Terbanyak<br>
-![5 Provinsi dengan Sampah Terbanyak](image-8.png)<br>
+![5 Provinsi dengan Sampah Terbanyak](images/image-8.png)<br>
 
 ## Data Preparation
 ### Model Klasifikasi Gambar
@@ -218,37 +218,37 @@ Model dasar Random Forest Regressor diinisialisasi dengan parameter default dan 
 ## Evaluasi
 ### Model Klasifikasi Gambar Organik dan Anorganik
 - Hasil Visualisasi <br>
-![alt text](image-12.png) <br>
+![alt text](images/image-12.png) <br>
 Grafik pertama menunjukkan bahwa Training Accuracy (garis biru) meningkat secara signifikan, sementara Validation Accuracy (garis oranye) juga menunjukkan peningkatan meskipun ada beberapa fluktuasi. Ini menunjukkan model belajar dengan baik, tetapi fluktuasi pada validasi dapat mengindikasikan overfitting. Grafik kedua menunjukkan Training Loss menurun stabil, yang berarti model semakin baik dalam memprediksi data pelatihan, tetapi Validation Loss sedikit berfluktuasi pada beberapa titik, yang menunjukkan adanya potensi ketidakstabilan atau overfitting dalam model.
 - Classification Report <br>
-![alt text](image-13.png) <br>
+![alt text](images/image-13.png) <br>
 Laporan klasifikasi ini menunjukkan kinerja model dalam mengklasifikasikan dua kelas: Anorganik dan Organik. Precision untuk kelas Anorganik adalah 1.00, yang berarti model sangat tepat dalam mengidentifikasi sampah anorganik, sementara recall 0.96 menunjukkan bahwa model dapat mendeteksi 96% sampah anorganik dengan benar. Untuk kelas Organik, precision adalah 0.95, dan recall 1.00, yang berarti model dapat mendeteksi semua sampah organik dengan sangat baik. F1-score yang tinggi untuk kedua kelas (0.98 untuk Anorganik dan 0.97 untuk Organik) menunjukkan keseimbangan yang baik antara precision dan recall, dengan accuracy keseluruhan 0.97.
 - Confusion Matrix <br>
-![alt text](image-14.png) <br>
+![alt text](images/image-14.png) <br>
 Confusion matrix ini menunjukkan hasil klasifikasi antara dua kelas: Anorganik dan Organik. Model berhasil mengklasifikasikan 543 sampel "Anorganik" dengan benar, sementara hanya 24 sampel yang salah diklasifikasikan sebagai "Organik". Di sisi lain, 460 sampel "Organik" berhasil diklasifikasikan dengan benar, dan hanya 2 sampel yang salah diklasifikasikan sebagai "Anorganik". Hasil ini mengonfirmasi bahwa model memiliki performa yang sangat baik dalam membedakan kedua kelas.
 
 ### Model Klasifikasi Gambar Ada Sampah dan Tidak Ada Sampah
 - Hasil Visualisasi <br>
-![alt text](image-9.png) <br>
+![alt text](images/image-9.png) <br>
 1. Training vs Validation Accuracy: Grafik ini menunjukkan perkembangan akurasi selama proses pelatihan. Training Accuracy (garis biru) meningkat secara signifikan, yang menandakan model belajar dengan baik dari data pelatihan. Validation Accuracy (garis oranye) juga meningkat, namun ada beberapa fluktuasi yang menunjukkan sedikit ketidakkonsistenan, yang bisa menjadi indikasi adanya overfitting jika akurasi validasi tidak stabil.
 
 2. Training vs Validation Loss: Grafik ini memperlihatkan loss pada data pelatihan dan validasi. Training Loss (garis biru) terus menurun seiring dengan bertambahnya epoch, yang menunjukkan bahwa model semakin baik dalam memprediksi data pelatihan. Validation Loss (garis oranye) juga menurun, namun ada beberapa titik di mana kurva validasi loss meningkat sedikit, yang mungkin menandakan model mulai overfit pada data pelatihan.
 
 - Classification Report <br>
-![alt text](image-10.png) <br>
+![alt text](images/image-10.png) <br>
 Confusion matrix ini menunjukkan hasil klasifikasi model dengan dua kelas: Ada Sampah dan Gak Ada Sampah. Model berhasil mengklasifikasikan 68 sampel "Ada Sampah" dengan benar dan hanya 10 sampel yang salah diklasifikasikan. Semua 43 sampel "Gak Ada Sampah" diklasifikasikan dengan benar, menunjukkan bahwa model sangat akurat dalam mengidentifikasi kedua kelas.
 
 - Confusion Matrix <br>
-!![alt text](image-11.png) <br>
+!![alt text](images/image-11.png) <br>
 Laporan klasifikasi menunjukkan precision, recall, dan F1-score untuk kedua kelas. Untuk "Ada Sampah", precision adalah 1.00 dan recall 0.87, memberikan F1-score 0.93. Untuk "Gak Ada Sampah", precision adalah 0.81 dan recall 1.00, dengan F1-score 0.90. Model memiliki accuracy keseluruhan 92%, dengan macro average dan weighted average yang menunjukkan kinerja model yang baik pada kedua kelas.
 
 ### Model Prediksi Komposisi Gambar
 - Hasil Evaluasi <br>
-![alt text](image-15.png) <br>
+![alt text](images/image-15.png) <br>
 Grafik ini menunjukkan learning curve untuk model Random Forest, yang membandingkan R2 score antara training dan validation dengan peningkatan ukuran data pelatihan. Dari grafik, terlihat bahwa seiring bertambahnya jumlah data pelatihan, training score (garis merah) dan validation score (garis hijau) keduanya meningkat. Ini menunjukkan bahwa model mulai mempelajari pola dengan lebih baik seiring dengan data yang lebih banyak, dengan kedua skor mendekati nilai yang lebih tinggi.
 
 - Inference <br>
-![alt text](image-16.png) <br>
+![alt text](images/image-16.png) <br>
 Grafik ini menunjukkan prediksi persentase sampah berdasarkan jenis sampah di Jawa Barat untuk tahun 2025. Hasilnya menunjukkan bahwa plastik memiliki prediksi persentase tertinggi, diikuti oleh sisa makanan, dan logam. Beberapa jenis sampah seperti kaca, kain, dan karton memiliki persentase yang jauh lebih rendah. Grafik ini menggunakan model Random Forest yang dioptimalkan untuk memprediksi distribusi persentase sampah berdasarkan data yang ada.
 
 ## Kesimpulan
